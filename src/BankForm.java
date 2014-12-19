@@ -14,6 +14,7 @@ public class BankForm {
 
     public BankForm() {
 
+        //Handle button pressing
         myButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
