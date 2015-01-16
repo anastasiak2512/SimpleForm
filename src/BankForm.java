@@ -13,12 +13,10 @@ public class BankForm {
     private JButton myButton;
 
     public BankForm() {
-
-        //Handle button pressing
         myButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                myText.setText(myText.getText() + " horay!");
+                myText.setText(myText.getText() + "horay!");
             }
         });
     }
