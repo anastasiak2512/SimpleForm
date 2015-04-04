@@ -6,7 +6,7 @@ import java.util.Random;
  * Created by anastasiakazakova on 04/04/15.
  */
 public class Draw extends JPanel {
-    private static final Color DA_BGCOLOR = Color.WHITE;
+    private static final Color DA_BGCOLOR = Color.lightGray;
     private static final int MAX_SIZE = 600;
 
     private int last_square_x = 200;
@@ -23,7 +23,7 @@ public class Draw extends JPanel {
 
         this.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                System.out.println("mouse pressed" + evt.getPoint().x + " " + evt.getPoint().y);
+                System.out.println("mouse pressed " + evt.getPoint().x + " " + evt.getPoint().y);
 
                 if ((evt.getPoint().x > last_square_x) && (evt.getPoint().x < last_square_x + last_square_size) &&
                    (evt.getPoint().y > last_square_y) && (evt.getPoint().y < last_square_y + last_square_size)) {
@@ -38,6 +38,7 @@ public class Draw extends JPanel {
                     last_square_y = MAX_SIZE/2 - last_square_size/2;
                 }
 
+                //IMPORTANT!
                 repaint();
             }
         });
@@ -53,7 +54,7 @@ public class Draw extends JPanel {
         if (!clean) {
             int color = last_square_size % 3;
 
-            graphics.setColor(color == 0 ? Color.cyan : color == 1 ? Color.magenta : Color.yellow);
+            graphics.setColor(color == 0 ? Color.cyan : color == 1 ? Color.magenta : Color.black);
             graphics.fillRect(last_square_x, last_square_y, last_square_size, last_square_size);
         } else {
             graphics.setColor(Color.red);
@@ -69,7 +70,6 @@ public class Draw extends JPanel {
 //        graphics.drawRect(200, 200, 200, 200);
 //
 //        graphics.setColor(Color.magenta);
-//        graphics.fillRoundRect(50, 50, 100, 100, 80, 80);
-//        repaint();
+//        graphics.fillRoundRect(50, 50, 100, 100, 30, 120);
     }
 }
