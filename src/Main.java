@@ -4,11 +4,12 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) {
-        //Some magic to draw the form
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        BaseCalc calc = new BaseCalc();
-        frame.setContentPane(calc.getCalcPanel());
+
+        Draw drawing = new Draw();
+        frame.setContentPane(drawing);
+
         frame.pack();
         frame.setVisible(true);
     }
